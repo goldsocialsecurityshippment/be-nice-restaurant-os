@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* Be-Nice Catering Services brand tokens, derived from the logo:
+   red pan, gold spatula, warm cream ground, charcoal ink. */
+:root {
+  --bn-red: #C1272D;
+  --bn-red-dark: #8F1D22;
+  --bn-gold: #B8935A;
+  --bn-gold-light: #D8B87F;
+  --bn-cream: #FBF6ED;
+  --bn-cream-deep: #F3E9D8;
+  --bn-charcoal: #241C18;
+  --bn-charcoal-soft: #4A3F38;
+
+  --background: var(--bn-cream);
+  --foreground: var(--bn-charcoal);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-bn-red: var(--bn-red);
+  --color-bn-red-dark: var(--bn-red-dark);
+  --color-bn-gold: var(--bn-gold);
+  --color-bn-gold-light: var(--bn-gold-light);
+  --color-bn-cream: var(--bn-cream);
+  --color-bn-cream-deep: var(--bn-cream-deep);
+  --color-bn-charcoal: var(--bn-charcoal);
+  --color-bn-charcoal-soft: var(--bn-charcoal-soft);
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-manrope);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
+}
+
+/* The "stamp" — a circular seal motif echoing the logo's red pan,
+   used as the recurring signature element instead of generic cards/badges. */
+.bn-stamp {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: var(--bn-red);
+  color: var(--bn-cream);
+}
+
+.bn-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--bn-gold), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
