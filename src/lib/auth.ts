@@ -2,6 +2,9 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
+console.log("[auth] AUTH_SECRET present:", Boolean(process.env.AUTH_SECRET));
+console.log("[auth] NEXTAUTH_SECRET present:", Boolean(process.env.NEXTAUTH_SECRET));
+console.log("[auth] NEXTAUTH_URL present:", Boolean(process.env.NEXTAUTH_URL));
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   secret: process.env.AUTH_SECRET ?? process.env.NEXTAUTH_SECRET,
